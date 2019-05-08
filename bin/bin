@@ -10,12 +10,4 @@ mkdir -p versions
 DEFAULT_VERSION=$(ls versions | tail -1)
 VERSION=${1:-$DEFAULT_VERSION}
 
-# OS
-os=$(./bin/os)
-
-# Path
-if [ $os = windows ]; then
-	echo "$PWD/versions/$VERSION"
-else
-  echo "$PWD/versions/$VERSION/bin"
-fi
+echo "$PWD/versions/$VERSION/bin"
